@@ -15,5 +15,56 @@
     <script src="app.js" defer></script>
     <title>Brunch_blog</title>
   </head>
-  <body></body>
+  <body>
+    <!-- NavBar Start-->
+    <nav class="mainNav">
+      <ul class="navList">
+        <li class="navItem"><a href="#" class="navLink">Home</a></li>
+        <li class="navItem"><a href="#" class="navLink">Recipies</a></li>
+        <li class="navItem"><a href="#" class="navLink">Blog</a></li>
+      </ul>
+    </nav>
+    <!--NavBar End  -->
+    <!-- Hero Start -->
+    <header class="hero">
+      <div class="hero__desc">
+        <h1>Chef de Jour</h1>
+        <p>Today, I'm the chef</p>
+      </div>
+      <a href="#blogPost__header" class="hero__arrow"
+        ><i class="bx bx-chevron-down-circle"></i
+      ></a>
+    </header>
+    <!-- Blog Search Start -->
+    <h2 id="blogPost__header">Recent Blog Posts</h2>
+    <input type="text" id="blogSearch" placeholder="Search for a post.." />
+    <!-- Blog Search End -->
+
+    <!-- Blog Section Start -->
+    <section class="blog-posts">
+      <div class="card-container">
+        <article class="card">
+          <p class="card__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            nobis esse repudiandae praesentium aut sit.
+          </p>
+          <img
+            src="images/pexels-anastasia-belousova-4696279.jpg"
+            alt=""
+            class="card__img"
+            loading="lazy"
+          />
+
+          <div class="card__meta">
+            <a href="#" class="cardmeta--title">Jogurt Strawberry</a>
+            <div class="card__meta--taglist">
+              <a href="#" class="card__meta--taglist-item">Jogurt</a>
+              <a href="#" class="card__meta--taglist-item">Dessert</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Blog Section Ends -->
+  </body>
 </html>
