@@ -1,8 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+:root {
+  --dark: #002a32;
+  --grey: #6b7577;
+  --light: #eff5f7;
+  --light-transparent: rgba(237, 248, 249, 0.752);
+  --light-gradient: linear-gradient(
+    180deg,
+    rgba(11, 52, 95, 0.33) 75.52%,
+    rgba(0, 12, 23, 0.154) 100%
+  );
+  --transition: all 0.2s ease-in-out;
+  --nav-height: 4rem;
+}
+
+body,
+html {
+  font-family: "Lato", sans-serif;
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth;
+  background-color: #000c17;
+}
+
+.mainNav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 2rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.mainNav .navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.mainNav .navLink {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mainNav .navLink:link, .mainNav .navLink:visited, .mainNav .navLink:active {
+  color: var(--light);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.mainNav.applyBackground {
+  background-color: var(--light-transparent);
+  -webkit-box-shadow: 0 3px 2px rgba(10, 15, 54, 0.1);
+          box-shadow: 0 3px 2px rgba(10, 15, 54, 0.1);
+}
+
+.mainNav.applyBackground .navLink:link, .mainNav.applyBackground .navLink:visited, .mainNav.applyBackground .navLink:active {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.hero {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-image: url("images/bg-spoon_Edit.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */
