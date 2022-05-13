@@ -174,7 +174,7 @@ input:focus {
   margin: 0 auto;
   border: 1px solid rgba(158, 154, 107, 0.368);
   border-radius: 10px;
-  background-color: #04151f;
+  background-color: rgba(4, 21, 31, 0.6);
 }
 
 .blog-posts .card-container {
@@ -194,6 +194,9 @@ input:focus {
   height: 400px;
   overflow: hidden;
   border-radius: 10px;
+  border: 3px solid rgba(21, 0, 0, 0.205);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .blog-posts .card-container .card__desc {
@@ -273,6 +276,8 @@ input:focus {
   left: 0;
   border-radius: 10px;
   z-index: 10;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .blog-posts .card-container .card:hover .card__desc {
@@ -288,5 +293,31 @@ input:focus {
 .blog-posts .card-container .card:hover .card__img {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+@media screen and (max-width: 470px) {
+  body {
+    position: relative;
+    overflow-x: hidden;
+    font-size: 70%;
+  }
+  .blog-posts {
+    padding: 0;
+  }
+  .hero {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+    scale: 2;
+    background-size: contain;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .hero__arrow {
+    bottom: 120px;
+    font-size: 80%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
