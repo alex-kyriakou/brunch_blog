@@ -10,6 +10,8 @@
 
 :root {
   --darkBlue: rgba(11, 52, 95, 0.33);
+  --darkerBlue: rgb(9, 31, 54);
+  --cardOpacity: rgba(6, 22, 40, 0.819);
   --lightDarkBlue: rgba(11, 52, 95, 0.922);
   --grey: #6b7577;
   --gold: #9d996a;
@@ -137,6 +139,7 @@ input {
   border-radius: 10px;
   outline: none;
   border: none;
+  margin-bottom: 1.5rem;
 }
 input:focus {
   background-color: rgba(11, 52, 95, 0.547);
@@ -148,4 +151,112 @@ input:focus {
   place-items: center;
   padding: 2.5rem 2rem;
   max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid hsla(55, 21%, 52%, 0.368);
+  border-radius: 10px;
+  // background-color: rgba(21, 36, 80, 0.341);
+  background-color: rgb(4, 21, 31);
+
+  .card-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    .card {
+      display: grid;
+      position: relative;
+      align-content: space-between;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+
+      &__desc {
+        opacity: 0;
+        padding: 1.5rem;
+        transition: var(--transition);
+      }
+
+      &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+        transition: var(--transition);
+      }
+
+      .card__meta {
+        z-index: 1;
+        background-color: var(--cardOpacity);
+        padding: 1.5rem;
+        transition: var(--transition);
+        border-radius: 0 0 10px 10px;
+
+        &--title {
+          font-size: 1.2rem;
+          color: #ccc;
+          display: block;
+          margin-bottom: 1rem;
+          font-weight: 600;
+          text-decoration: none;
+        }
+
+        &--taglist {
+          display: flex;
+          gap: 0.5rem;
+          flex-wrap: wrap;
+          text-decoration: none;
+          list-style: none;
+
+          &-item {
+            padding: 0.5rem 0.9rem;
+            background-color: hwb(207 7% 73%);
+            color: #ccc;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 20px;
+            font-size: 0.8rem;
+
+            &:hover {
+              color: var(--gold);
+              transition: var(--transition);
+            }
+          }
+        }
+      }
+    }
+    .card:hover {
+      &::after {
+        content: "";
+        background-color: var(--cardOpacity);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // border-radius: 0 0 10px 10px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+
+      .card__desc {
+        opacity: 1;
+        z-index: 100;
+      }
+
+      .card__meta {
+        background-color: transparent;
+        z-index: 100;
+      }
+
+      .card__img {
+        transform: scale(1.2);
+      }
+    }
+  }
 }
